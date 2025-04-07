@@ -1,0 +1,28 @@
+<core:FragmentDefinition xmlns:core="sap.ui.core"
+                         xmlns="sap.m"
+                         xmlns:form="sap.ui.layout.form">
+
+ <!-- Dropdown only  -->
+            <Select items="{/cities}" >
+                <items>
+                    <core:Item key="{name}" text="{name}" ></core:Item>
+                    <!-- <core:Item key="{state}" text="{state}" ></core:Item> -->
+                    <!-- <core:Item key="" text="" ></core:Item> -->
+                </items>
+            </Select>
+            <!-- combo box = input for selection + dropdown  -->
+            <ComboBox items="{/cities}">
+                <items>
+                    <core:Item key="{name}" text="{name}"></core:Item>
+                </items>
+            </ComboBox>
+
+            <MultiComboBox items="{/cities}">
+                <items>
+                    <core:Item key="{name}" text="{name}"></core:Item>
+                </items>
+            </MultiComboBox>
+
+
+
+</core:FragmentDefinition>

@@ -1,0 +1,66 @@
+<mvc:View xmlns:mvc="sap.ui.core.mvc"
+          xmlns="sap.m"
+          controllerName="ibm.hr.payroll.controller.View1"
+>
+<!-- Page control is having title, body , and fotter . Therefore it is a best practice to use it and looks like mobile screen  -->
+<Page title="View 1">
+   <headerContent> 
+   <Button icon="sap-icon://action" press="onGoTo" ></Button>   
+   </headerContent>
+<!-- below is at body level  -->
+    <!-- <Button text="Go To Next" press="onGoTo">    </Button> -->
+
+   <content>
+     <SearchField id="idSearch" search="onSearch" liveChange="onLiveSearch"> </SearchField>
+     <!-- do absolute path of the model with aggrigation binding  -->
+     <!--  for 'Navigation' type of ObjectListItem , it triggers the 'itemPress' at List level -->
+     <!-- <List id="idMyList" items = "{/fruits}" itemPress = "onPress" mode="Delete" delete ="onDeleteItem">  -->
+     <!-- above statment is commented, it was for app container and below one is split app contriner -->
+          <!-- <List id="idMyList" items = "{/fruits}"  selectionChange = "onPress" mode="SingleSelectMaster" delete ="onDeleteItem">  -->
+       <List id="idMyList" items = "{/ProductSet}"
+            growing="true" growingThreshold="3"
+              selectionChange = "onPress" mode="SingleSelectMaster" delete ="onDeleteItem">
+        <items>
+     <!-- To dispaly the business object list in SAP ex: SO, PO, A/C, Materials etc...  This is used in most of the standard app  -->
+        <!--  do relative path with aggrigation binding -->
+    <!-- <ObjectListItem  title = "{name}" intro = "{healthBenefit}"  number ="{price}" numberUnit = "{curr}" icon = "{image}"   type = "Navigation" > -->
+<!-- above one is for app contrainer and below one is split app container   -->
+<!-- <ObjectListItem  title = "{name}" intro = "{healthBenefit}"  number ="{price}" numberUnit = "{curr}" icon = "{image}"  > -->
+<ObjectListItem  title = "{PRODUCT_ID}" intro = "{NAME}"  
+                 number ="{PRICE}" numberUnit = "{CURRENCY_CODE}" icon = "sap-icon://product"  >
+<!--  we can add additional properities by using <attributes> aggrigation object inside the ObjectListItem  -->
+            <attributes>
+                <!-- <ObjectAttribute text="{taste}" title ="taste"> </ObjectAttribute>          -->
+                <ObjectAttribute text="{SUPPLIER_NAME}" title ="Supplier Name"> </ObjectAttribute>        
+            </attributes>
+            <firstStatus>
+                <!-- <ObjectStatus text = "{availability}" > </ObjectStatus> -->
+
+                <!-- <ObjectStatus text = "{path : 'availability',
+                                       formatter : '.formatter.getStatus'}"
+                                       
+                              state="{path: 'availability',
+                                      formatter: '.formatter.getState'}"   >   -->
+
+
+                <ObjectStatus text="{path : 'MEASURE_UNIT'}">                               
+                </ObjectStatus>
+            </firstStatus>
+            </ObjectListItem>
+           </items>
+     </List>
+   </content> 
+    <footer>
+        <Toolbar >
+            <ToolbarSpacer > </ToolbarSpacer>
+            <Button tooltip="add" press="onAdd" icon="sap-icon://add" ></Button>
+        
+        </Toolbar>
+    
+    
+    </footer>
+
+
+
+</Page>
+</mvc:View>

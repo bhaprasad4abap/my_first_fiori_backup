@@ -1,0 +1,14 @@
+<mvc:View xmlns:mvc="sap.ui.core.mvc"
+          xmlns="sap.m"
+          controllerName="ibm.hr.payroll.controller.Empty"
+>
+<!-- Page control is having title, body , and fotter . Therefore it is a best practice to use it and looks like mobile screen  -->
+<Page title="Empty View">
+   <headerContent> 
+   <Button icon="sap-icon://action" press="onGoTo" ></Button>   
+   </headerContent>
+   <content>
+     <Image width="800px" height="800px" src="https://applescoop.org/image/wallpapers/mac/marvel-movie-disney-avengers-minimalist-icons-30-11-2024-1732960042-hd-wallpaper.jpg"></Image>
+   </content> 
+</Page>
+</mvc:View>

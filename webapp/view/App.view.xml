@@ -1,0 +1,12 @@
+<!-- this is root view  -->
+<mvc:View xmlns:mvc="sap.ui.core.mvc"
+          xmlns="sap.m"
+          controllerName="ibm.hr.payroll.controller.App"
+>
+<!--  this is app container control, which is association with root view  -->
+<!-- <App id="idAppCon"> -->
+<!-- </App> -->
+<!-- above statment is app contrainer for 'work list' type and below one is for 'master detailed' type of apps , add split app contrainer -->
+   <SplitApp id="idAppCon" ></SplitApp>
+
+</mvc:View>

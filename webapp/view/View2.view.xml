@@ -1,0 +1,83 @@
+<mvc:View xmlns:core="sap.ui.core" xmlns:table="sap.ui.table" 
+          xmlns:form="sap.ui.layout.form" 
+          xmlns:calendar="sap.ui.unified.calendar" 
+          xmlns:mvc="sap.ui.core.mvc"
+          xmlns="sap.m" 
+          controllerName="ibm.hr.payroll.controller.View2"
+ >
+<Page title="View 2" showNavButton="true" navButtonPress="onGoBack" >
+
+<!-- Bring selected data to view 2 by element binding  -->
+  <!-- <Text text = "{name}"/> -->
+  <!-- <ObjectHeader title="{name}" 
+                intro="{healthBenefit}"
+                number="{price}"
+                numberUnit="{curr}"
+                icon="{image}"></ObjectHeader> -->
+
+  <ObjectHeader title="{PRODUCT_ID}" 
+                intro="{DESCRIPTION}"
+                number="{PRICE}"
+                numberUnit="{CURRENCY_CODE}"
+                icon="sap-icon://product"></ObjectHeader>
+
+
+<!-- adding tab stript on the top of the view  -->
+ <IconTabBar >
+    <items>
+        <IconTabFilter text="More Info" icon="sap-icon://warning" >
+        <!-- take out the below code and add it into fragments part and ecapsulate/call/embeded the fragment   -->
+            <!-- <form:SimpleForm >
+                <form:content>
+                    <Label text="Name"> </Label>
+                    <Text text ="{name}"> </Text>
+                    
+                    <Label text="Color"> </Label>
+                    <Text text ="{color}"> </Text>
+
+                    <Label text="Size"> </Label>
+                    <Text text ="size"> </Text>
+
+                    <Label text="Cost"> </Label>
+                    <Text text ="{price} - {curr}"> </Text>                
+
+                    <Label text="Benifits"> </Label>
+                    <Text text ="healthBenefit"> </Text>                                   
+                </form:content>          
+            </form:SimpleForm> -->
+
+<!--  embed or call the fragment  instead of above code , as above code is placed at fragment  -->
+            <!-- <core:Fragment fragmentName="ibm.hr.payroll.fragments.moreInfo" type="XML" /> -->
+            <!-- we can add multiple times below is one example  -->
+         <core:Fragment fragmentName="ibm.hr.payroll.fragments.moreInfo" type="XML" />
+          </IconTabFilter>
+        
+        <IconTabFilter text="Suppliers" icon="sap-icon://supplier" >
+               <!-- remove table code and embed the supplier fragment -->
+         <core:Fragment fragmentName="ibm.hr.payroll.fragments.supplier" type="XML" />
+        </IconTabFilter>
+
+        <IconTabFilter text="Cities" icon="sap-icon://home" >
+       <!--  call the cities fragment here  -->
+         <core:Fragment fragmentName="ibm.hr.payroll.fragments.cities" type="XML" />
+        </IconTabFilter>
+    
+    </items>
+ </IconTabBar>
+
+
+ <!-- <Button text="Go Back" press="onGoBack"> </Button> -->
+
+    <footer>
+        <Toolbar>
+		  <ToolbarSpacer/>
+            <Button text = "Save" type="Accept" press="onSave" > </Button>
+            <Button text = "Cancel" type="Reject" press="onCancel" > </Button>
+        </Toolbar>
+    </footer>
+
+
+</Page>
+
+
+</mvc:View>

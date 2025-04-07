@@ -1,0 +1,169 @@
+{
+    "_version" : "1.68.0",
+    "sap.app": {
+
+    "id": "ibm.hr.payroll",
+    "type": "application",
+    "applicationVersion" : { 
+        "version": "1.0.0"
+    }, 
+
+    "title" : "My Fruits App",
+    "description" : "{{appDescription}}",
+    "i18n" : "i18n/i18n.properties",
+
+    "dataSources": {
+        "hpkServices": {
+            "uri": "/sap/opu/odata/sap/ZHPK_ODATA_SRV/",
+            "type": "OData",
+            "settings": {
+                "odataVersion": "2.0"
+            }
+        }
+
+    }
+
+
+},
+
+
+"sap.ui": {
+
+    "fullWidth": true,
+    "technology": "UI5",
+    "deviceTypes": { 
+        "desktop" : true,
+        "phone" : true,
+        "tablet" : true
+    },
+    "supportedThems" : ["sap_fiori_3","sap_fiori_3_dark","sap_horizon"] 
+
+},
+
+
+"sap.ui5": {
+    "dependencies": {
+                        "minUI5Version": "1.38.0",
+                        "libs": {
+                            "sap.ui.core" : {
+                                "minVersion": "1.38.0",
+                                        "lazy" : false
+                            },
+                            "sap.m" : {
+                                "minVersion": "1.38.0",
+                                        "lazy" : false
+                            },
+                            "sap.ui.layout" : {
+                                "minVersion": "1.38.0",
+                                        "lazy" : false
+                            }
+                        }
+
+                    },
+
+        "contentDensities" : {
+                "compact": true,
+                "cozy" : true
+        },
+
+
+
+        "rootView": {
+
+                "viewName": "ibm.hr.payroll.view.App",
+                "type" : "XML",
+                "id": "idXMLView"
+              
+                
+
+        
+        },
+
+        "routing": {
+            "config":{ 
+                "routerClass": "sap.m.routing.Router",
+                "path": "ibm.hr.payroll.view",
+                 "viewType": "XML",
+                 "controlId": "idAppCon",
+                 "clearControlAggregation": true
+
+            },
+
+            "routes" :[
+                {
+                "pattern": "",
+                "name": "start",
+                "target" : ["donald","trump"]
+                },
+                {
+                    "pattern": "fruits/{fruitId}",
+                    "name" :"superman",
+                    "target": ["donald","modi"]
+
+                },
+                {   
+                    "pattern": "manageProduct",
+                    "name": "add",
+                    "target":["donald","putin"]
+
+
+                }
+
+            ],
+            "targets": {
+                "donald" : {
+                    "id" : "idView1",
+                    "viewName" : "View1",
+                    "controlAggregation": "masterPages"
+                },
+                "trump" : {
+
+                    "id": "idEmpty",
+                    "viewName" : "Empty",
+                    "controlAggregation": "detailPages"
+                
+                },
+                "modi" : {
+                    "id": "idView2",
+                    "viewName": "View2",
+                    "controlAggregation": "detailPages"
+                },
+                "putin" :{
+                    "id": "idAdd",
+                    "viewName" : "Add",
+                    "controlAggregation": "detailPages"
+                }
+
+            }
+
+        },
+
+
+
+
+        "models" : {
+            
+            "" : {
+                "type": "sap.ui.model.odata.v2.ODataModel",
+                "dataSource": "hpkServices"
+
+           },
+
+
+
+            "old": {
+                "type": "sap.ui.model.json.JSONModel", 
+                "uri": "model/fruits.json"
+            },
+            "i18n": { 
+                "type" : "sap.ui.model.resource.ResourceModel",
+                "settings": {
+                    "bundleUrl" : "i18n/i18n.properties"
+                }
+
+            }
+
+        }
+
+    }
+}
