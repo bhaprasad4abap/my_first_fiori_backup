@@ -221,7 +221,7 @@ function(BaseController,MessageBox,MessageToast,Fragment,Filter,FilterOperator){
            this.oLocalModel.setProperty("/prodData/SUPPLIER_ID",oSelItem.getTitle());
            this.oLocalModel.setProperty("/prodData/SUPPLIER_NAME",oSelItem.getDescription());  
            
-        //    this.oField.setValue(oSelItem.getTitle());
+        // //   this.oField.setValue(oSelItem.getTitle());
         },
 
 

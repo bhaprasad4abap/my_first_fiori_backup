@@ -8,7 +8,7 @@
    <Button icon="sap-icon://action" press="onGoTo" ></Button>   
    </headerContent>
    <content>
-     <Image width="800px" height="800px" src="https://applescoop.org/image/wallpapers/mac/marvel-movie-disney-avengers-minimalist-icons-30-11-2024-1732960042-hd-wallpaper.jpg"></Image>
+     <Image width="801px" height="801px" src="https://applescoop.org/image/wallpapers/mac/marvel-movie-disney-avengers-minimalist-icons-30-11-2024-1732960042-hd-wallpaper.jpg"></Image>
    </content> 
 </Page>
 </mvc:View>

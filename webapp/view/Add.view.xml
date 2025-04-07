@@ -28,7 +28,8 @@
 			singleContainerFullSize="false" >
 			<f:content>
 				<Label text="Product ID" />
-				<!-- when user click on enter key, then submit will trigger  -->
+				<!-- when user click on enter key,  then submit will trigger  -->
+				<!-- teting git  -->
 				<Input id="idProd" value="{local>/prodData/PRODUCT_ID}" submit="onEnter" />
 				<!-- add a button to bring the most expensive product  -->
 				<Button text="Most Expensive " type="Transparent" press="onLoadExp"></Button>
