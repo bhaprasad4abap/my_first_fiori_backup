@@ -10,4 +10,3 @@ server:
       backend:
       - path: /sap
         url: http://183.82.99.164:9222/
-        destination: S4HANA2020
